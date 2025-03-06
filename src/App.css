@@ -36,3 +36,52 @@
     transform: rotate(360deg);
   }
 }
+
+.forecast-container {
+  background: rgba(0, 125, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  font-family: Arial, sans-serif;
+  color: white;
+  }
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.day {
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.temp {
+  font-size: 14px;
+}
+
+.condition {
+  font-size: 12px;
+  text-align: right;
+}
+  
+

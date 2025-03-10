@@ -17,5 +17,3 @@ const CurrentTemperature = ({ city, temp, condition, high, low }) => {
 
 export default CurrentWeather;
 
-export default CurrentTemperature;
-

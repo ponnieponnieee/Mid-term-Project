@@ -6,8 +6,11 @@ import FiveDayForecast from './components/FiveDayForecast';
 function App() {
   return (
     <div className="App">
-      <AdditionalInfo />
+      <SearchBar/>
+      <CurrentWeather/>
+      <HourlyForecast/>
       <FiveDayForecast/>
+      <AdditionalInfo />
     </div>
   );
 }

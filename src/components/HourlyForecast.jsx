@@ -1,5 +1,4 @@
 import React from "react";
-import "./HourlyForecast.css";
 
 const HourlyForecast = ({ forecast }) => {
     return (

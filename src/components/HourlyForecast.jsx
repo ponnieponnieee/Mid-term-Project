@@ -1,6 +1,10 @@
 import React from "react";
 
-const HourlyForecast = ({ forecast }) => {
+const HourlyForecast = ({ forecast = [] }) => {
+    if (!forecast || forecast.length === 0) {
+        return <p>Loading forecast...</p>;
+    }
+
     return (
         <div className="hourly-forecast-container">
             <div className="forecast-title">Hourly Forecast</div>

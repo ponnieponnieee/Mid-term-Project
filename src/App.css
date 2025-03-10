@@ -1,3 +1,79 @@
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: none;
+  border-radius: 20px;
+  padding: 5px;
+  height: 30px;
+  border: 1px solid white;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+  
+.hourly-forecast-container {
+  width: 90%;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.forecast-title {
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hourly-forecast {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.hour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  flex: 1;
+  min-width: 60px;
+}
+
+.hour span {
+  display: block;
+  margin: 3px 0;
+}
+
+.arrow {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
 .App {
   text-align: center;
 }
@@ -107,4 +183,4 @@ h2 {
 }
   
 
-main
+

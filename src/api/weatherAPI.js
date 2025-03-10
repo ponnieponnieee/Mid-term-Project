@@ -32,3 +32,4 @@ export const fetchForecast = async (city) => {
         throw error.response ? error.response.data : new Error("Lỗi không xác định");
     }
 };
+export default weatherAPI.js

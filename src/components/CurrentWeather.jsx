@@ -1,9 +1,6 @@
 import React from "react";
 
 const CurrentWeather = ({ city, temp, condition, high, low }) => {
-
-const CurrentTemperature = ({ city, temp, condition, high, low }) => {
-
     return (
         <div className="current-temp-container">
             <h1>{city}</h1>
@@ -13,7 +10,5 @@ const CurrentTemperature = ({ city, temp, condition, high, low }) => {
         </div>
     );
 };
-
-
 export default CurrentWeather;
 

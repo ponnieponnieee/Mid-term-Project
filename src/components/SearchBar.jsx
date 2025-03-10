@@ -25,3 +25,6 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
+
+
+// Test updates the search bar

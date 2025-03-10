@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import FiveDayForecast from './components/FiveDayForecast';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <FiveDayForecast/>
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-
+import './CurrentWeather.css';
 const CurrentWeather = ({ city, temp, condition, high, low }) => {
 
 

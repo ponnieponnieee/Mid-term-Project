@@ -1,5 +1,5 @@
 import React from "react";
-
+import './HourlyForecast.css';
 const HourlyForecast = ({ forecast = [] }) => {
     if (!forecast || forecast.length === 0) {
         return <p>Loading forecast...</p>;

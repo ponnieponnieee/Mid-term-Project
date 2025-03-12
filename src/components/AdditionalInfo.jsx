@@ -1,6 +1,5 @@
 import React from "react";
-
-
+import './AdditionalInfo.css';
 const AdditionalInfo = () =>{
     // dữ liệu mặc định khi chưa gọi API
     const weatherData = {

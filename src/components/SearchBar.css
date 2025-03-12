@@ -1,0 +1,38 @@
+.search-bar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    background: none;
+    border-radius: 20px;
+    padding: 5px;
+    height: 30px;
+    border: 1px solid white;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 2px 5px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .search-bar {
+        width: 120px;
+    }
+}

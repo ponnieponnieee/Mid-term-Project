@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./SearchBar.css";
 const SearchBar = ({ onSearch }) => {
     const [city, setCity] = useState("");
 
@@ -24,6 +24,3 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
-
-
-// Test updates the search bar

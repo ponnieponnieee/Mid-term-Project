@@ -1,5 +1,5 @@
 import React from "react";
-
+import './FiveDayForeCast.css';
 const FiveDayForecast = () => {
     // dữ liệu thời tiết mẫu khi chưa có api
     const dummyForecast = [

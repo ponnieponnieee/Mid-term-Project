@@ -113,21 +113,64 @@
   }
 }
 
-feature/Additional_Info
-.additonal-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+.forecast-container {
+  background: rgba(28, 135, 170, 0.5); /* Màu nền xanh đậm hơn */
   padding: 20px;
-  background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
+  width: 350px; /* Chiều rộng hộp */
+  min-height: 400px; /* Đảm bảo chiều cao ổn định */
+  font-family: Arial, sans-serif;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.forecast-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Khoảng cách giữa hộp 7-day forecast và hộp thông tin */
+  margin-top: 20px;
+}
+
+/* feature/Additional_Info */
+
+/* Hộp chứa 6 thông tin thời tiết */
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
+  grid-template-rows: repeat(2, auto); /* 2 hàng */
+  gap: 20px; /* Khoảng cách giữa các hộp */
+  padding: 20px;
+  background: rgba(173, 216, 230, 0.5); /* Nền xanh nhẹ */
+  border-radius: 10px;
+  width: 580px;
+  height: auto; /* Đảm bảo chiều cao thay đổi theo nội dung */
+  overflow: visible;
+}
+
+/* Hộp từng thông tin */
 .info-box {
-  background: rgba(255, 255, 255, 0.3);
-  padding: 15px;
-  border-radius: 8px;
+  background: rgba(39, 133, 164, 0.5); /* Nền trong suốt nhẹ */
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: white !important;
+  min-width: 140px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  /* Cho phép các hộp tự điều chỉnh chiều cao theo nội dung */
+  height: auto;
+  flex-grow: 1;
+  position: relative;
 }
 
 .uv-index span.moderate {
@@ -135,14 +178,22 @@ feature/Additional_Info
   font-weight: bold;
 }
 
-.forecast-container {
-  background: rgba(0, 125, 255, 0.2);
-  padding: 15px;
-  border-radius: 10px;
-  width: 300px;
-  font-family: Arial, sans-serif;
-  color: white;
-  }
+/* .forecast-section { */
+  /* display: flex; */
+  /* justify-content: center; Căn giữa theo chiều ngang */
+  /* align-items: flex-start; Giữ các hộp thẳng hàng */
+  /* gap: 30px; Khoảng cách giữa hộp "5-DAYS FORECAST" và hộp thông tin */
+  /* margin-top: 20px; */
+/* } */
+
+
+/* .forecast-wrapper { */
+  /* display: flex;
+  justify-content: center; /* Căn giữa */
+  /* align-items: flex-start; /* Giữ hộp thẳng hàng */
+  /* gap: 30px; Khoảng cách giữa các hộp */
+  /* margin-top: 20px; */
+/* } */
 
 h2 {
     font-size: 18px;
@@ -156,13 +207,20 @@ h2 {
   gap: 10px;
 }
 
+.forecast-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
 .forecast-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 10px;
+  background: rgba(39, 133, 164, 0.5);
+  padding: 12px;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .day {
@@ -202,4 +260,33 @@ p {
   margin: 5px 0;
 }
 
- 
+body {
+  background-image: url('sky.jpg'); /* Đường dẫn đến hình nền */
+  background-size: cover;  /* Đảm bảo hình nền phủ kín trang */
+  background-position: center; /* Đặt hình nền vào giữa */
+  background-repeat: no-repeat;  /* Không lặp lại hình nền */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white; /* Màu chữ trắng để dễ đọc trên nền sáng */
+}
+
+/* Cập nhật header và phần tử khác */
+.App-header {
+  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ nhẹ cho header */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}
+
+/* Cập nhật các phần tử khác để có nền mờ, dễ nhìn */
+.forecast-container,
+.additional-info {
+  background: rgba(255, 255, 255, 0.2); /* Nền trong suốt nhẹ để nổi bật */
+  padding: 15px;
+  border-radius: 10px;
+}

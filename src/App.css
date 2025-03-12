@@ -113,20 +113,6 @@
   }
 }
 
-.forecast-container {
-  background: rgba(28, 135, 170, 0.5); /* Màu nền xanh đậm hơn */
-  padding: 20px;
-  border-radius: 10px;
-  width: 350px; /* Chiều rộng hộp */
-  min-height: 400px; /* Đảm bảo chiều cao ổn định */
-  font-family: Arial, sans-serif;
-  color: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .forecast-info-container {
   display: flex;
   justify-content: center;
@@ -135,19 +121,41 @@
   margin-top: 20px;
 }
 
+.forecast-container {
+  background: rgba(28, 135, 170, 0.5); /* Màu nền xanh đậm hơn */
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px; /* Chiều rộng hộp */
+  min-height: 400px; /* Đảm bảo chiều cao ổn định */
+  font-family: Arial, sans-serif;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.forecast-container h2 {
+  font-size: 30px; /* Giảm kích thước chữ cho tiêu đề */
+  margin-bottom: 50px; /* Khoảng cách giữa tiêu đề và các phần tử bên dưới */
+  text-align: center;
+  font-weight: bolder; /* Căn giữa tiêu đề */
+}
+
 /* feature/Additional_Info */
 
 /* Hộp chứa 6 thông tin thời tiết */
 .additional-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cột */
-  grid-template-rows: repeat(2, auto); /* 2 hàng */
-  gap: 20px; /* Khoảng cách giữa các hộp */
+  grid-template-rows: repeat(2, 1fr); /* Đảm bảo chiều cao các ô cân đối */
+  gap: 15px; /* Khoảng cách giữa các hộp */
   padding: 20px;
-  background: rgba(173, 216, 230, 0.5); /* Nền xanh nhẹ */
+  background: rgba(56, 133, 209, 0.5); /* Màu nền của hộp */
   border-radius: 10px;
-  width: 580px;
-  height: auto; /* Đảm bảo chiều cao thay đổi theo nội dung */
+  width: 580px; /* Đảm bảo chiều rộng hợp lý */
+  height: 427px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Đảm bảo chiều cao của container đồng đều */
   overflow: visible;
 }
 
@@ -158,19 +166,38 @@
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: white !important;
-  min-width: 140px;
-  min-height: 100px;
+  min-width: 110px;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   /* Cho phép các hộp tự điều chỉnh chiều cao theo nội dung */
-  height: auto;
+  height: 79%;
   flex-grow: 1;
   position: relative;
+}
+
+/* Điều chỉnh kích thước chữ cho tiêu đề (h3) */
+.info-box h3 {
+  font-size: 14px; /* Giảm kích thước chữ cho các tiêu đề như WIND, VISIBILITY, UV INDEX */
+  margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và thông số */
+  text-transform: uppercase; /* Viết hoa các tiêu đề để dễ nhìn hơn */
+  font-weight: normal;
+}
+
+/* Điều chỉnh kích thước chữ cho thông số (p) */
+.info-box p {
+  font-size: 35px; /* Tăng kích thước chữ cho các thông số */
+  font-weight: bold;
+}
+
+/* UV INDEX màu sắc */
+.uv-index p {
+  color: white;
 }
 
 .uv-index span.moderate {
@@ -178,28 +205,12 @@
   font-weight: bold;
 }
 
-/* .forecast-section { */
-  /* display: flex; */
-  /* justify-content: center; Căn giữa theo chiều ngang */
-  /* align-items: flex-start; Giữ các hộp thẳng hàng */
-  /* gap: 30px; Khoảng cách giữa hộp "5-DAYS FORECAST" và hộp thông tin */
-  /* margin-top: 20px; */
-/* } */
-
-
-/* .forecast-wrapper { */
-  /* display: flex;
-  justify-content: center; /* Căn giữa */
-  /* align-items: flex-start; /* Giữ hộp thẳng hàng */
-  /* gap: 30px; Khoảng cách giữa các hộp */
-  /* margin-top: 20px; */
-/* } */
-
 h2 {
     font-size: 18px;
     margin-bottom: 10px;
     text-align: center;
 }
+
 
 .forecast-list {
   display: flex;

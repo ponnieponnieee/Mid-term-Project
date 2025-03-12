@@ -299,11 +299,10 @@ h2 {
   cursor: pointer;
 }
 
-update-css-hiennhi
 @media (max-width: 600px) {
   h2 {
       font-size: 35px;
-  }
+    }
 }
 
 
@@ -331,10 +330,15 @@ body {
   padding: 20px;
 }
 
-/* Cập nhật các phần tử khác để có nền mờ, dễ nhìn */
-.forecast-container,
-.additional-info {
-  background: rgba(255, 255, 255, 0.2); /* Nền trong suốt nhẹ để nổi bật */
+.forecast-container {
+  background: rgba(255, 255, 255, 0.2);
   padding: 15px;
   border-radius: 10px;
 }
+
+.additional-info {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+}
+}}

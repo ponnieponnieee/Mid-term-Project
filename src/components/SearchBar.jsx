@@ -9,7 +9,7 @@ const SearchBar = ({ onSearch }) => {
             setCity("");
         }
     };
-``
+    
     return (
         <div className="search-bar">
             <input 

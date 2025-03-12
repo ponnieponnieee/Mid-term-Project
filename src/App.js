@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css'
 import AdditionalInfo from './components/AdditionalInfo';
 import FiveDayForecast from './components/FiveDayForecast';
@@ -11,8 +11,10 @@ function App() {
       <SearchBar/>
       <CurrentWeather/>
       <HourlyForecast/>
-      <FiveDayForecast/>
-      <AdditionalInfo />
+      <div className="forecast-info-container">
+        <FiveDayForecast />
+        <AdditionalInfo />
+      </div>
     </div>
   );
 }

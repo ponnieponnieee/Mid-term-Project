@@ -113,21 +113,91 @@
   }
 }
 
-feature/Additional_Info
-.additonal-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+.forecast-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Khoảng cách giữa hộp 7-day forecast và hộp thông tin */
+  margin-top: 20px;
 }
 
-.info-box {
-  background: rgba(255, 255, 255, 0.3);
-  padding: 15px;
-  border-radius: 8px;
+.forecast-container {
+  background: rgba(28, 135, 170, 0.5); /* Màu nền xanh đậm hơn */
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px; /* Chiều rộng hộp */
+  min-height: 400px; /* Đảm bảo chiều cao ổn định */
+  font-family: Arial, sans-serif;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.forecast-container h2 {
+  font-size: 30px; /* Giảm kích thước chữ cho tiêu đề */
+  margin-bottom: 50px; /* Khoảng cách giữa tiêu đề và các phần tử bên dưới */
   text-align: center;
+  font-weight: bolder; /* Căn giữa tiêu đề */
+}
+
+/* feature/Additional_Info */
+
+/* Hộp chứa 6 thông tin thời tiết */
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
+  grid-template-rows: repeat(2, 1fr); /* Đảm bảo chiều cao các ô cân đối */
+  gap: 15px; /* Khoảng cách giữa các hộp */
+  padding: 20px;
+  background: rgba(56, 133, 209, 0.5); /* Màu nền của hộp */
+  border-radius: 10px;
+  width: 580px; /* Đảm bảo chiều rộng hợp lý */
+  height: 427px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Đảm bảo chiều cao của container đồng đều */
+  overflow: visible;
+}
+
+/* Hộp từng thông tin */
+.info-box {
+  background: rgba(39, 133, 164, 0.5); /* Nền trong suốt nhẹ */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: white !important;
+  min-width: 110px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* Cho phép các hộp tự điều chỉnh chiều cao theo nội dung */
+  height: 79%;
+  flex-grow: 1;
+  position: relative;
+}
+
+/* Điều chỉnh kích thước chữ cho tiêu đề (h3) */
+.info-box h3 {
+  font-size: 14px; /* Giảm kích thước chữ cho các tiêu đề như WIND, VISIBILITY, UV INDEX */
+  margin-bottom: 10px; /* Khoảng cách giữa tiêu đề và thông số */
+  text-transform: uppercase; /* Viết hoa các tiêu đề để dễ nhìn hơn */
+  font-weight: normal;
+}
+
+/* Điều chỉnh kích thước chữ cho thông số (p) */
+.info-box p {
+  font-size: 35px; /* Tăng kích thước chữ cho các thông số */
+  font-weight: bold;
+}
+
+/* UV INDEX màu sắc */
+.uv-index p {
+  color: white;
 }
 
 .uv-index span.moderate {
@@ -135,20 +205,12 @@ feature/Additional_Info
   font-weight: bold;
 }
 
-.forecast-container {
-  background: rgba(0, 125, 255, 0.2);
-  padding: 15px;
-  border-radius: 10px;
-  width: 300px;
-  font-family: Arial, sans-serif;
-  color: white;
-  }
-
 h2 {
     font-size: 18px;
     margin-bottom: 10px;
     text-align: center;
 }
+
 
 .forecast-list {
   display: flex;
@@ -156,13 +218,20 @@ h2 {
   gap: 10px;
 }
 
+.forecast-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
 .forecast-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 10px;
+  background: rgba(39, 133, 164, 0.5);
+  padding: 12px;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .day {
@@ -202,4 +271,33 @@ p {
   margin: 5px 0;
 }
 
- 
+body {
+  background-image: url('sky.jpg'); /* Đường dẫn đến hình nền */
+  background-size: cover;  /* Đảm bảo hình nền phủ kín trang */
+  background-position: center; /* Đặt hình nền vào giữa */
+  background-repeat: no-repeat;  /* Không lặp lại hình nền */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white; /* Màu chữ trắng để dễ đọc trên nền sáng */
+}
+
+/* Cập nhật header và phần tử khác */
+.App-header {
+  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ nhẹ cho header */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}
+
+/* Cập nhật các phần tử khác để có nền mờ, dễ nhìn */
+.forecast-container,
+.additional-info {
+  background: rgba(255, 255, 255, 0.2); /* Nền trong suốt nhẹ để nổi bật */
+  padding: 15px;
+  border-radius: 10px;
+}

@@ -8,8 +8,8 @@ const FiveDayForecast = () => {
         { day: "Fri", min: 23, max: 27, condition: "Mild Sunshine", icon: "🌤" },
         { day: "Sat", min: 23, max: 28, condition: "Mild Sunshine", icon: "🌤" },
         { day: "Sun", min: 20, max: 24, condition: "Downpour", icon: "🌧" },
-        { day: "Mon", min: 22, max: 27, condition: "Partly Cloudy", icon: "☁️" },
-        { day: "Tue", min: 24, max: 27, condition: "Partly Cloudy", icon: "☁️" },
+        // { day: "Mon", min: 22, max: 27, condition: "Partly Cloudy", icon: "☁️" },
+        // { day: "Tue", min: 24, max: 27, condition: "Partly Cloudy", icon: "☁️" },
   ];
     return(
         <div className="forecast-container">

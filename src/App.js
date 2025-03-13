@@ -70,28 +70,7 @@ function App() {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,daily&appid=${API_KEY}&units=metric`
       );
-      const fetchFiveDayForecast = async (lat, lon) => {
-        try {
-          const response = await axios.get(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
-          );
       
-          // Xử lý dữ liệu để lấy dự báo từng ngày
-          const dailyForecast = response.data.list
-            .filter((item, index) => index % 8 === 0) // Lấy dự báo mỗi 24 giờ (API trả về mỗi 3 giờ)
-            .map((day) => ({
-              day: new Date(day.dt * 1000).toLocaleDateString("en-US", { weekday: "short" }),
-              min: Math.round(day.main.temp_min),
-              max: Math.round(day.main.temp_max),
-              condition: day.weather[0].description,
-              icon: `https://openweathermap.org/img/wn/${day.weather[0].icon}.png`, // Lấy icon từ API
-            }));
-      
-          setFiveDayForecast(dailyForecast);
-        } catch (error) {
-          console.error("Lỗi khi lấy dữ liệu dự báo 5 ngày:", error);
-        }
-      };
       setHourlyForecast(
         response.data.hourly.slice(0, 6).map((hour) => ({
           time: new Date(hour.dt * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
@@ -148,6 +127,7 @@ function App() {
   visibility={weatherData?.visibility}
   feelsLike={weatherData?.main.feels_like}
 />
+
       </div>
     </div>
   );

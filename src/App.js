@@ -6,6 +6,7 @@ import FiveDayForecast from "./components/FiveDayForecast";
 import CurrentWeather from "./components/CurrentWeather";
 import HourlyForecast from "./components/HourlyForecast";
 import SearchBar from "./components/SearchBar";
+import TemperatureUnitToggle from "./components/TemperatureUnitToggle";
 
 import cloudy from "./weather-img/cloudy.jpg";
 import night from "./weather-img/night.jpg";
@@ -28,16 +29,26 @@ const getBackgroundImage = (weather) => {
   return images[weather] || sunny;
 };
 
+// Hàm chuyển đổi nhiệt độ
+const convertTemperature = (temp, unit) => {
+  if (unit === "imperial") {
+    // Chuyển từ Celsius sang Fahrenheit
+    return (temp * 9) / 5 + 32;
+  }
+  return temp;
+};
+
 function App() {
   const [city, setCity] = useState("Hanoi");
   const [weatherData, setWeatherData] = useState(null);
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const [uvIndex, setUvIndex] = useState(null);
+  const [unit, setUnit] = useState("metric");
 
   useEffect(() => {
     fetchWeatherData();
-  }, [city]);
+  }, [city, unit]);
 
   const fetchWeatherData = async () => {
     try {
@@ -62,16 +73,19 @@ function App() {
       setHourlyForecast(
         response.data.hourly.slice(0, 6).map((hour) => ({
           time: new Date(hour.dt * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-          temp: hour.temp,
+          temp: convertTemperature(hour.temp, unit),
           weather: hour.weather[0].description,
         }))
       );
-      console.log("Updated hourlyForecast:", response.data.hourly.slice(0, 6));      
       
       setUvIndex(response.data.current.uvi);
     } catch (error) {
       console.error("Lỗi khi gọi API One Call:", error);
     }
+  };
+
+  const toggleUnit = () => {
+    setUnit(unit === "metric" ? "imperial" : "metric"); // Chuyển đổi giữa °C và °F
   };
 
   return (
@@ -86,6 +100,8 @@ function App() {
         height: "100vh",
       }}
     >
+      <TemperatureUnitToggle unit={unit} toggleUnit={toggleUnit} />
+
       <SearchBar setCity={setCity} />
       {weatherData && (
         <CurrentWeather
@@ -94,11 +110,15 @@ function App() {
           condition={weatherData.weather[0].description}
           high={weatherData.main.temp_max}
           low={weatherData.main.temp_min}
+          unit={unit}
+          convertTemperature={convertTemperature}
         />
       )}
-      <HourlyForecast forecast={hourlyForecast} />
+      <HourlyForecast forecast={hourlyForecast} unit={unit} />
       <div className="forecast-info-container">
-        <FiveDayForecast forecast={fiveDayForecast} />
+        <FiveDayForecast forecast={fiveDayForecast}
+        
+        />
         <AdditionalInfo 
           humidity={weatherData?.main.humidity}
           pressure={weatherData?.main.pressure}
@@ -109,5 +129,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

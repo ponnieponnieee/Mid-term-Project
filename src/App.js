@@ -45,23 +45,11 @@ function App() {
   const [uvIndex, setUvIndex] = useState(null);
   const [unit, setUnit] = useState("metric");
 
-  // Fetch weather data
-  const fetchWeatherData = async () => {
-    try {
-      const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=${unit}`
-      );
-      setWeatherData(response.data);
-    } catch (error) {
-      console.error("Lỗi lấy dữ liệu thời tiết hiện tại:", error);
-    }
-  };
-
   // Fetch 5-day forecast
   const fetchFiveDayForecast = async () => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=${unit}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
       );
 
       const dailyForecast = {};
@@ -97,13 +85,13 @@ function App() {
           icon: `https://openweathermap.org/img/wn/${hour.weather[0].icon}.png`,
         }))
       );
+
     } catch (error) {
       console.error("Lỗi khi gọi API dự báo theo giờ:", error);
     }
   };
 
   useEffect(() => {
-    fetchWeatherData();
     fetchFiveDayForecast();
     fetchHourlyForecast();
   }, [city, unit]);
@@ -112,13 +100,13 @@ function App() {
     setUnit(unit === "metric" ? "imperial" : "metric");
   };
 
-  const weatherCondition = weatherData?.weather?.[0]?.main?.toLowerCase() || "clear";
-
   return (
     <div
       className="App"
       style={{
-        backgroundImage: `url(${getBackgroundImage(weatherCondition)})`,
+        backgroundImage: `url(${getBackgroundImage(
+          weatherData?.weather?.[0]?.main?.toLowerCase()
+        )})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -127,7 +115,7 @@ function App() {
       <TemperatureUnitToggle unit={unit} toggleUnit={toggleUnit} />
 
       <SearchBar setCity={setCity} />
-      {weatherData?.main && weatherData?.weather?.length > 0 && (
+      {weatherData && (
         <CurrentWeather
           city={weatherData.name}
           temp={weatherData.main.temp}

@@ -15,7 +15,7 @@ import rain from "./weather-img/rain.jpg";
 import snow from "./weather-img/snow.jpg";
 import sunny from "./weather-img/sunny.jpg";
 
-const API_KEY = "3ce140d80007df9aa61c2345eb5fc341";
+const API_KEY = "882921e0d9be5ba87335b05a02cd362d";
 
 const getBackgroundImage = (weather) => {
   const images = {
@@ -44,6 +44,23 @@ function App() {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const [uvIndex, setUvIndex] = useState(null);
   const [unit, setUnit] = useState("metric");
+
+  useEffect(() => {
+    fetchFiveDayForecast();
+    fetchHourlyForecast();
+    fetchCurrentWeather();
+  }, [city, unit]);
+
+  const fetchCurrentWeather = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=${unit}`
+      );
+      setWeatherData(response.data);
+    } catch (error) {
+      console.error("Lỗi khi lấy dữ liệu thời tiết hiện tại:", error);
+    }
+  };
 
   // Fetch 5-day forecast
   const fetchFiveDayForecast = async () => {
@@ -91,10 +108,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    fetchFiveDayForecast();
-    fetchHourlyForecast();
-  }, [city, unit]);
 
   const toggleUnit = () => {
     setUnit(unit === "metric" ? "imperial" : "metric");

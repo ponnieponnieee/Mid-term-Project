@@ -1,6 +1,6 @@
 .forecast-container {
   width: 400px; /* Giảm kích thước */
-  min-height: 320px;
+  height: 295px;
   padding: 12px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1); /* Nền trong suốt */
@@ -30,13 +30,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
-  border-radius:4px;
-  font-size: 30px;
+  padding: 2px 8px; /* Giảm padding để chiều cao ngắn hơn */
+  border-radius: 4px;
+  font-size: 18px; /* Giảm kích thước chữ để tiết kiệm không gian */
   background: rgba(31, 29, 72, 0.2); /* Chia các ngày bằng nền mờ */
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 10px; /* Đảm bảo chiều cao tối thiểu nhỏ hơn */
+  height: 35px; /* Để ô có thể co giãn theo nội dung */
 }
+
 
 /* Phần ngày */
 .day {

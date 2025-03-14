@@ -20,7 +20,6 @@ const HourlyForecast = ({ forecast = [], unit }) => {
                     </div>
                 ))}
             </div>
-            <div className="arrow">➡</div>
         </div>
     );
 };

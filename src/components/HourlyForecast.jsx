@@ -13,7 +13,7 @@ const HourlyForecast = ({ forecast = [], unit }) => {
                 {forecast.map((hour, index) => (
                     <div className="hour" key={index}>
                         <div className="hour-time">{hour.time}</div>
-                        <img src={`https://openweathermap.org/img/wn/${hour.icon}.png`} alt={hour.weather} />
+                        <img src={hour.icon ? hour.icon : "https://openweathermap.org/img/wn/01d.png"} alt={hour.weather} />
                         <div className="hour-temp">
                             {hour.temp}{unit === "metric" ? "°C" : "°F"}
                         </div>

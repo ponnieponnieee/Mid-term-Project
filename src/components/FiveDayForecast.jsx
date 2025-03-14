@@ -14,7 +14,7 @@ const FiveDayForecast = ({ forecast = [] }) => {
           <div key={index} className="forecast-item">
             <span className="day">{day.day}</span>
             <img src={day.icon} alt={day.condition} className="weather-icon" />
-            <span className="temp">{day.min}°C - {day.max}°C</span>
+            <span className="temp">{convertTemperature(day.min, unit)}°C - {convertTemperature(day.max, unit)}°C</span>
             <span className="condition">{day.condition}</span>
           </div>
         ))}

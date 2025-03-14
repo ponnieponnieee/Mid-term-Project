@@ -15,7 +15,7 @@ import rain from "./weather-img/rain.jpg";
 import snow from "./weather-img/snow.jpg";
 import sunny from "./weather-img/sunny.jpg";
 
-const API_KEY = "882921e0d9be5ba87335b05a02cd362d";
+const API_KEY = "3ce140d80007df9aa61c2345eb5fc341";
 
 const getBackgroundImage = (weather) => {
   const images = {

@@ -1,56 +1,105 @@
-.current-weather {
-    text-align: center;
-    color: white;
-    padding: 20px;
-  }
-  
-  h1, h2, p {
+/* .current-temp-container {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.current-temp-container h1, .current-temp-container h2, .current-temp-container p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.current-temp-container h1 {
+  font-size: 28px;
+}
+
+.current-temp-container h2 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.unit-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  cursor: pointer;
+} */
+
+@media (min_width: 1025px) {
+.current-temp-container {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.current-temp-container h1,
+  .current-temp-container h2,
+  .current-temp-container p {
     margin: 0;
     line-height: 1.2;
-  }
-  
-  h1 {
-    font-size: 28px;
-  }
-  
-  h2 {
-    font-size: 45px;
-    font-weight: bold;
-  }
-  
-  .unit-toggle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 14px;
-    cursor: pointer;
-  }
+}
 
-/* Dành cho iPhone 14 Pro Max và các thiết bị nhỏ hơn */
-@media (max-width: 430px) {
-  h1 {
-    font-size: 24px;
-  }
+.current-temp-container h1 {
+  font-size: 28px;
+}
 
-  h2 {
-    font-size: 35px;
-  }
+.current-temp-container h2 {
+  font-size: 45px;
+  font-weight: bold;
+}
 
-  .unit-toggle {
-    font-size: 12px;
-  }
+.unit-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
 }
 
 /* Dành cho tablet */
 @media (max-width: 1024px) {
-h1 {
-    font-size: 26px;
+  .current-temp-container h1 {
+    font-size: 30px;
+  }
+
+  .current-temp-container h2 {
+    font-size: 45px;
+  }
+
+  .current-temp-container p {
+    font-size: 15px;
+    color: #ffffff;
+    background-color: rgba(13, 71, 96, 0.4);
+    border-radius: 5px;
+  }
 }
 
-h2 {
-    font-size: 40px;
-}
-.unit-toggle {
-    font-size: 14px;
-  }
+/* Dành cho iPhone 14 Pro Max và các thiết bị nhỏ hơn */
+@media (max-width: 430px) {
+    /* Khi màn hình nhỏ hơn 430px, điều chỉnh lại tất cả các phần tử */
+    .current-temp-container {
+      padding: 5px;
+      background-color: rgba(9, 94, 130, 0.6); /* Thêm màu nền cho đẹp hơn trên màn hình nhỏ */
+      border-radius: 8px;
+    }
+  
+    .current-temp-container h1 {
+      font-size: 15px; /* Giảm font-size cho tên thành phố */
+      position: relative; /* Đảm bảo sử dụng vị trí tương đối */
+      top: 15px;
+    }
+  
+    .current-temp-container h2 {
+      font-size: 30px; /* Giảm font-size cho nhiệt độ */
+    }
+  
+    .current-temp-container p {
+      font-size: 14px; /* Giảm kích thước font cho mô tả */
+      background-color: rgba(9, 94, 130, 0.4); /* Thêm nền cho phần mô tả */
+      border-radius: 8px;
+      padding: 5px;
+      margin-top: 10px;
+    }
 }

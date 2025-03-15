@@ -54,6 +54,46 @@ body {
   justify-content: center;
 }
 
+/* Dành cho iPhone 14 Pro Max và các thiết bị nhỏ hơn */
+@media (max-width: 430px) {
+  .App-header {
+    padding: 10px;
+    font-size: calc(10px + 1vmin);
+  }
+
+  .forecast-info-container {
+    display: flex;
+    flex-direction: column; /* Xếp dọc các phần tử */
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .forecast-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .forecast-item {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .current-temp-container h1 {
+    font-size: 30px;
+  }
+
+  .current-temp-container h2 {
+    font-size: 35px;
+  }
+
+  .current-temp-container p {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: rgba(8, 99, 137, 0.4);
+    border-radius: 10px;
+  }
+}
+
 /* Các kiểu dáng phản hồi cho thiết bị nhỏ hơn (Máy tính bảng và các thiết bị tương tự) */
 @media (max-width: 1024px) {
   .App {
@@ -113,80 +153,4 @@ body {
     border-radius: 10px;  /* Thêm thuộc tính này để bo tròn góc */
   }
 
-}
-
-/* Dành cho iPhone 14 Pro Max (kích thước 430px x 932px) */
-@media (max-width: 430px) {
-  .App-header {
-    padding: 10px;
-    font-size: calc(10px + 1vmin); /* Giảm kích thước chữ thêm chút */
-  }
-
-  .forecast-info-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px;
-  }
-
-  .forecast-container {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-  }
-
-  /* Điều chỉnh các phần tử dự báo theo giờ */
-  .hourly-forecast-container {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .forecast-title {
-    font-size: 16px; /* Điều chỉnh kích thước tiêu đề */
-  }
-
-  .forecast-item {
-    min-width: 70px;
-    padding: 5px;
-  }
-
-  .additional-info {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cột thay vì 3 */
-    grid-template-rows: repeat(3, 1fr); /* Điều chỉnh số hàng */
-    gap: 10px;
-  }
-
-  /* Các phần tử trong phần forecast */
-  .five-day-forecast {
-    width: 100%;
-    padding: 10px;
-  }
-
-  /* Điều chỉnh kích thước chữ cho các yếu tố khác */
-  .hour-time, .hour-temp, .day, .temp {
-    font-size: 12px;
-  }
-
-  .weather-icon {
-    width: 25px;
-    height: 25px;
-  }
-
-  .unit-toggle {
-    font-size: 12px;
-  }
-
-  .condition {
-    font-size: 10px;
-  }
-
-  .current-temp-container h1 {
-    font-size: 24px;
-  }
-
-  .current-temp-container h2 {
-    font-size: 35px;
-  }
 }

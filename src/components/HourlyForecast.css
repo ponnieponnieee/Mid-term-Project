@@ -1,51 +1,83 @@
+/* Container chính */
 .hourly-forecast-container {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-    margin: 10px 0;
-    overflow-x: auto;
-  }
-  
+  background: rgba(37, 150, 190, 0.2); /* Hiệu ứng kính mờ nhẹ */
+  backdrop-filter: blur(10px); 
+  border-radius: 12px;
+  padding: 5px;
+  width: 900px;
+  min-height: 100px;
+  margin-top: 7px;
+  margin-bottom: 1px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgba(255, 255, 255, 0.3); /* Viền trắng mờ */
+}
+
+/* Tiêu đề */
 .forecast-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
+  font-size: 18px;
+  font-weight: bold;
+  color: white; /* Thống nhất màu chữ với các box khác */
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Dãy giờ dự báo */
 .hourly-forecast {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    overflow-x: auto;
-  }
-  
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2px;
+  padding: 15px;
+  padding-top: 5px;
+  justify-content: space-between;
+}
+
+/* Hộp dự báo từng giờ */
 .hour {
-    text-align: center;
-    margin: 0 10px;
-  }
-  
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.15); /* Tạo hiệu ứng kính mờ */
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  min-width: 80px; /* Kích thước phù hợp trên mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover hiệu ứng */
+.hour:hover {
+  transform: scale(1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Thời gian */
 .hour-time {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Icon thời tiết */
 .weather-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    margin: 5px 0;
-  }
-  
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 6px 0;
+}
+
+/* Nhiệt độ */
 .hour-temp {
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
-.arrow {
-    margin-left: auto;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
 }

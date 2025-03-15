@@ -1,46 +1,50 @@
 import React from "react";
-import './AdditionalInfo.css';
-const AdditionalInfo = ({humidity, pressure, windSpeed, uvIndex, visibility, feelsLike}) =>{
-    // dữ liệu mặc định khi chưa gọi API
-    const weatherData = {
-        wind: windSpeed + " km/h",
-        visibility: visibility / 1000 + " km",
-        uvIndex: uvIndex,
-        humidity: humidity,
-        feelsLike: feelsLike,
-        pressure: pressure,
-    };
+import "./AdditionalInfo.css";
+import { FaWind } from "react-icons/fa";
+import { MdVisibility } from "react-icons/md";
+import { FaCloud } from "react-icons/fa";
+import { RiWaterPercentFill } from "react-icons/ri";
+import { FaTemperatureThreeQuarters } from "react-icons/fa6";
+import { FaGauge } from "react-icons/fa6";
 
+
+
+const AdditionalInfo = ({ humidity, pressure, windSpeed, cloudiness, visibility, feelsLike, convertTemperature, unit}) => {
     return (
         <div className="additional-info">
             <div className="info-box">
-                <h3>WIND</h3>
-                <p>{weatherData.wind}</p>
+                <h3><FaWind /><br/> WIND</h3>
+                <p>{windSpeed ? `${windSpeed} m/s` : "Loading..."}</p>
             </div>
 
             <div className="info-box">
-                <h3>VISIBILITY</h3>
-                <p>{weatherData.visibility}</p>
+                <h3><MdVisibility /><br/> VISIBILITY</h3>
+                <p>{visibility ? `${visibility / 1000} km` : "Loading..."}</p>
             </div>
 
-            <div className="info-box uv-index">
-                <h3>UV INDEX</h3>
-                <p>{weatherData.uvIndex} <span className="moderate">moderate</span></p>
-            </div>
-
-            <div className="info-box">
-                <h3>HUMIDITY</h3>
-                <p>{weatherData.humidity}</p>
+            <div className="info-box cloudiness">
+                <h3><FaCloud /><br/> CLOUDINESS</h3>
+                <p>{cloudiness !== null ? `${cloudiness}%` : "Loading..."}</p>
             </div>
 
             <div className="info-box">
-                <h3>FEELS LIKE</h3>
-                <p>{weatherData.feelsLike}</p>
+                <h3><RiWaterPercentFill /> <br/>HUMIDITY</h3>
+                <p>{humidity ? `${humidity}%` : "Loading..."}</p>
             </div>
 
             <div className="info-box">
-                <h3>⚖ PRESSURE</h3>
-                <p>{weatherData.pressure}</p>
+                <h3><FaTemperatureThreeQuarters /><br/>FEELS LIKE</h3>
+                <p>
+                    {feelsLike !== null 
+                    ? `${convertTemperature(feelsLike, unit)}°${unit === "metric" ? "C" : "F"}`
+                    : "Loading..."}
+    </p>
+</div>
+
+
+            <div className="info-box">
+                <h3><FaGauge /> PRESSURE</h3>
+                <p>{pressure ? `${pressure} hPa` : "Loading..."}</p>
             </div>
         </div>
     );

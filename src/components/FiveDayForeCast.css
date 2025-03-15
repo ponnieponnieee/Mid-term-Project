@@ -79,8 +79,8 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1)
   }
 
-  .forecast-title {
-    font-size: 18px;
+  .forecast-container h3 {
+    font-size: 17px;
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
@@ -125,23 +125,27 @@
 }
 
 /* Dành cho iPhone 14 Pro Max và các thiết bị nhỏ hơn */
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .forecast-container {
     width: 100%;
-    padding: 10px;
+    position: relative;
+    top: -40px;
+    height: 55%;
   }
 
-  .forecast-title {
-    font-size: 16px;
+  .forecast-container h3 {
+    font-size: 0px;
   }
 
   .forecast-item {
     font-size: 14px;
     padding: 5px;
+    position: relative;
+    left: -5px;
   }
 
   .day {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .icon {
@@ -149,10 +153,10 @@
   }
 
   .temp {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .condition {
-    font-size: 8px;
+    font-size: 12px;
   }
 }

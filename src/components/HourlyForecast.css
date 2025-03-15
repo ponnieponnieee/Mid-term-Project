@@ -171,54 +171,62 @@
 }
 
 /* Dành cho iPhone 14 Pro Max và các thiết bị nhỏ hơn */
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .hourly-forecast-container {
-    width: 90%;
+    width: 95%;
     /* padding: 2px; */
     align-items: center;
 
     background: rgba(37, 150, 190, 0.2); /* Hiệu ứng kính mờ nhẹ */
     /* backdrop-filter: blur(10px); */
     border-radius: 12px;
-    min-height: 10px;
-    margin-top: 7px;
-    margin-bottom: 1px;
+    /* min-height: 10px; */
+    /* margin-top: 7px; */
+    /* margin-bottom: 1px; */
     overflow-x: auto;
     display: flex;
     flex-direction: column;
-    border: 0.5px solid rgba(255, 255, 255, 0.3); /* Viền trắng mờ */
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    height: 15%;
+    position: relative;
+    top: -35px;
   }
 
   .forecast-title {
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     color: white;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
+    position: relative;
+    top: -10px;
   }
 
   .hourly-forecast {
-    gap: 10px;
+    gap: 37px;
     flex-direction: row;
     overflow-x: scroll;
     display: flex;
     align-items: center;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 15px;
-    padding-top: 5px;
-    justify-content: flex-start; /* Điều chỉnh cách các phần tử sắp xếp */
+    /* padding: 15px; */
+    /* padding-top: 5px; */
+    justify-content: flex-start;
     flex-wrap: wrap;
+    border: 20px;
+    position: relative;
+    top: -10px;
   }
 
   .hour {
     /* min-width: 80px;
     padding: 8px; */
-    font-size: 14px; /* Tăng kích thước chữ một chút */
+    font-size: 10px;
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 8px;
     transition: transform 0.3s ease, background 0.3s ease;
     scroll-snap-align: start;
@@ -238,12 +246,12 @@
 
   .hour-time {
     font-size: 14px;
-    font-weight: 600;
-    color: white;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
   }
 
   .hour-temp {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
   }

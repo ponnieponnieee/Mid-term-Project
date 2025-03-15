@@ -10,7 +10,7 @@
 }
 
 /* Tiêu đề */
-.forecast-title {
+.forecast-container h3 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -40,7 +40,6 @@
   height: 35px; /* Để ô có thể co giãn theo nội dung */
 }
 
-
 /* Phần ngày */
 .day {
   font-weight: bold;
@@ -49,17 +48,46 @@
 }
 
 /* Icon thời tiết */
-.icon {
+.weather-icon {
   font-size: 18px;
+  width: 28px;
+  height: 28px;
 }
 
 /* Nhiệt độ */
 .temp {
   font-size: 13px;
+  color: white;
 }
 
 /* Điều kiện thời tiết */
 .condition {
   font-size: 11px;
   text-align: right;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .forecast-container {
+    width: 80%;
+    height: auto;
+  }
+  
+  .forecast-item {
+    height: auto;
+    min-height: 40px;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  .forecast-container {
+    width: 100%;
+    height: auto;
+  }
+  
+  .forecast-item {
+    height: auto;
+    min-height: 40px;
+  }
 }

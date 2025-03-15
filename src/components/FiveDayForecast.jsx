@@ -7,7 +7,7 @@ const FiveDayForecast = ({ forecast = [], unit, convertTemperature }) => {
   }
 
   return (
-    <div className="forecast-container">
+    <div className="forecast-container" >
       <h3>5-DAYS FORECAST</h3>
       <div className="forecast-list">
         {forecast.map(([date, data], index) => (

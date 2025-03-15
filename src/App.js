@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
+// import "./App.css";
 import AdditionalInfo from "./components/AdditionalInfo";
 import FiveDayForecast from "./components/FiveDayForecast";
 import CurrentWeather from "./components/CurrentWeather";
@@ -118,30 +118,61 @@ function App() {
     <div
       className="App"
       style={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
         backgroundImage: `url(${getBackgroundImage(
           weatherData?.weather?.[0]?.main?.toLowerCase()
         )})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh",
-      }}
-    >
-      <SearchBar onSearch={setCity} />
+      }}>
+      <header style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "10px",
+      }}>
+        <div>
+          <TemperatureUnitToggle unit={unit} toggleUnit={toggleUnit} />
+        </div>
 
-      {weatherData && (
-        <CurrentWeather
-          city={weatherData.name}
-          temp={weatherData.main.temp}
-          condition={weatherData.weather[0].description}
-          high={weatherData.main.temp_max}
-          low={weatherData.main.temp_min}
-          unit={unit}
-          convertTemperature={convertTemperature}
-        />
-      )}
-      <HourlyForecast forecast={hourlyForecast} unit={unit} />
+        <div style={{ display: "flex" }}>
+          <SearchBar onSearch={setCity} />
+        </div>
+      </header>
+
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "20px",
+      }}>
+        {weatherData && (
+            <CurrentWeather
+              city={weatherData.name}
+              temp={weatherData.main.temp}
+              condition={weatherData.weather[0].description}
+              high={weatherData.main.temp_max}
+              low={weatherData.main.temp_min}
+              unit={unit}
+              convertTemperature={convertTemperature}
+            />
+          )}
+      </div>
+      <div style={{
+        width: "90%",
+        margin: "auto",
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "20px",
+      }}>
+        <HourlyForecast forecast={hourlyForecast} unit={unit} />
+      </div>
+
       <div className="forecast-info-container">
-        <FiveDayForecast forecast={fiveDayForecast} unit={unit} convertTemperature={convertTemperature} />
+        <FiveDayForecast 
+          forecast={fiveDayForecast} 
+          unit={unit} 
+          convertTemperature={convertTemperature}/>
 
         <AdditionalInfo 
           humidity={weatherData?.main?.humidity}
@@ -153,8 +184,6 @@ function App() {
           convertTemperature={convertTemperature}  // Truyền hàm xuống component
           unit={unit}
         />
-
-        <TemperatureUnitToggle unit={unit} toggleUnit={toggleUnit} />
 
       </div>
     </div>

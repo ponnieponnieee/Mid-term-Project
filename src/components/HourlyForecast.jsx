@@ -7,7 +7,21 @@ const HourlyForecast = ({ forecast = [], unit }) => {
     }
 
     return (
-        <div className="hourly-forecast-container">
+        <div
+        style={{
+            background: "rgba(37, 150, 190, 0.2)", /* Hiệu ứng kính mờ nhẹ */
+            backdropFilter: "blur(10px)",
+            borderRadius: 12,
+            padding: 5,
+            width: 900,
+            minHeight: 170,
+            marginTop: 7,
+            marginBottom: 1,
+            overflowX: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            border: "0.5px solid rgba(255, 255, 255, 0.3)" /* Viền trắng mờ */
+        }}>
             <div className="forecast-title">Hourly Forecast</div>
             <div className="hourly-forecast">
                 {forecast.map((hour, index) => (

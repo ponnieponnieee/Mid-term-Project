@@ -15,7 +15,7 @@ import rain from "./weather-img/rain.jpg";
 import snow from "./weather-img/snow.jpg";
 import sunny from "./weather-img/sunny.jpg";
 
-const API_KEY = "882921e0d9be5ba87335b05a02cd362d";
+const API_KEY = "3ce140d80007df9aa61c2345eb5fc341";
 
 const getBackgroundImage = (weather) => {
   const images = {
@@ -32,10 +32,11 @@ const getBackgroundImage = (weather) => {
 // Hàm chuyển đổi nhiệt độ
 const convertTemperature = (temp, unit) => {
   if (unit === "imperial") {
-    return (temp * 9) / 5 + 32;
+    return Math.round((temp * 9) / 5 + 32); // Làm tròn số nguyên
   }
-  return temp;
+  return Math.round(temp);
 };
+
 
 function App() {
   const [city, setCity] = useState("Hanoi");
@@ -125,9 +126,8 @@ function App() {
         height: "100vh",
       }}
     >
-      <TemperatureUnitToggle unit={unit} toggleUnit={toggleUnit} />
+      <SearchBar onSearch={setCity} />
 
-      <SearchBar setCity={setCity} />
       {weatherData && (
         <CurrentWeather
           city={weatherData.name}
@@ -147,10 +147,15 @@ function App() {
           humidity={weatherData?.main?.humidity}
           pressure={weatherData?.main?.pressure}
           windSpeed={weatherData?.wind?.speed}
-          uvIndex={uvIndex}
+          cloudiness={weatherData?.clouds?.all}
           visibility={weatherData?.visibility}
           feelsLike={weatherData?.main?.feels_like}
+          convertTemperature={convertTemperature}  // Truyền hàm xuống component
+          unit={unit}
         />
+
+        <TemperatureUnitToggle unit={unit} toggleUnit={toggleUnit} />
+
       </div>
     </div>
   );

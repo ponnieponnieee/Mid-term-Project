@@ -3,7 +3,7 @@
   height: 295px;
   padding: 12px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1); /* Nền trong suốt */
+  background: rgba(37, 150, 190, 0.4); /* Nền trong suốt */
   backdrop-filter: blur(10px); /* Hiệu ứng nền mờ */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Viền nhẹ để tăng độ rõ */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */

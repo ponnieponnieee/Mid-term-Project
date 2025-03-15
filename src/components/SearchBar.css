@@ -5,11 +5,17 @@
     width: 200px;
     display: flex;
     align-items: center;
-    background: none;
+    
+    /* Hiệu ứng kính mờ */
+    background: rgba(255, 255, 255, 0.2); /* Màu trắng trong suốt */
+    backdrop-filter: blur(10px); /* Làm mờ nền */
+    
     border-radius: 20px;
     padding: 5px;
     height: 30px;
-    border: 1px solid white;
+    
+    /* Viền trắng mờ tinh tế */
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
 .search-bar input {
@@ -19,6 +25,8 @@
     outline: none;
     font-size: 12px;
     border-radius: 20px;
+    
+    /* Làm mờ nền input để phù hợp */
     background: transparent;
     color: white;
 }
@@ -35,4 +43,31 @@
     .search-bar {
         width: 120px;
     }
+}
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Màu trắng mờ */
+    font-size: 12px;
+}
+
+.suggestions-list {
+    position: absolute;
+    top: 40px;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    color: white;
+}
+
+.suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.suggestions-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
 }

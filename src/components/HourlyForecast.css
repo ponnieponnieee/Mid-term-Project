@@ -113,3 +113,41 @@
     gap: 5px;
   }
 }
+
+/* Dành cho tablet (màn hình từ 768px đến 1024px) */
+@media (max-width: 1024px) {
+  .hourly-forecast-container {
+    width: 95%;
+    padding: 15px;
+    align-items: center;
+  }
+
+  .forecast-title {
+    font-size: 18px;
+  }
+
+  .hourly-forecast {
+    gap: 10px;
+    flex-direction: row;
+    /* overflow-x: scroll; */
+  }
+
+  .hour {
+    min-width: 80px; /* Điều chỉnh kích thước cho tablet */
+    padding: 8px;
+    font-size: 14px; /* Tăng kích thước chữ một chút */
+  }
+
+  .hour-time {
+    font-size: 14px;
+  }
+
+  .hour-temp {
+    font-size: 18px;
+  }
+
+  .weather-icon {
+    width: 35px;
+    height: 35px;
+  }
+}

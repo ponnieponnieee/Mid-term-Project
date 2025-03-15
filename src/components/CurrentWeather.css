@@ -25,14 +25,8 @@
     font-size: 14px;
     cursor: pointer;
   }
-  
-  @media (max-width: 600px) {
-    h2 {
-        font-size: 35px;
-      }
-  }
 
-  /* Dành cho iPhone 14 Pro Max và các thiết bị nhỏ hơn */
+/* Dành cho iPhone 14 Pro Max và các thiết bị nhỏ hơn */
 @media (max-width: 430px) {
   h1 {
     font-size: 24px;
@@ -49,15 +43,14 @@
 
 /* Dành cho tablet */
 @media (max-width: 1024px) {
-  h1 {
+h1 {
     font-size: 26px;
-  }
+}
 
-  h2 {
+h2 {
     font-size: 40px;
-  }
-
-  .unit-toggle {
+}
+.unit-toggle {
     font-size: 14px;
   }
 }

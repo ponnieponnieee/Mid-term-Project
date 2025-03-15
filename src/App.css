@@ -96,12 +96,23 @@ body {
   }
 
   .current-temp-container h1 {
-    font-size: 26px;
+    font-size: 35px;
   }
 
   .current-temp-container h2 {
     font-size: 40px;
   }
+
+  .current-temp-container p {
+    /* font-size: 20px;
+    color: #ffffff;
+    background-color: rgba(26, 54, 101, 0.5); */
+    font-size: 20px;
+    color: #ffffff;
+    background-color: rgba(8, 99, 137, 0.4);
+    border-radius: 10px;  /* Thêm thuộc tính này để bo tròn góc */
+  }
+
 }
 
 /* Dành cho iPhone 14 Pro Max (kích thước 430px x 932px) */

@@ -92,11 +92,12 @@
   }
 
   .additional-info {
-    width: 58%;
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 cột */
     grid-template-rows: repeat(2, 1fr); /* 2 hàng */
     gap: 17px;
+    align-items: center;
   }
 
   .info-box {
@@ -105,6 +106,16 @@
     width: 100px;
     height: 100px;
   }
+
+  .info-box h3 {
+    font-size: 13px;
+  }
+
+  .info-box p {
+    font-size: 25px;
+    font-weight: bolder;
+  }
+
 
   .forecast-title {
     font-size: 18px;

@@ -100,8 +100,9 @@
 /* Dành cho tablet */
 @media (max-width: 1024px) {
   .forecast-container {
-    width: 45%;
+    width: 60%;
     padding: 15px;
+    height: 45%;
   }
 
   .forecast-title {
@@ -109,7 +110,8 @@
   }
 
   .forecast-item {
-    font-size: 16px;
+    font-size: 20px;
+    align-items: center;
   }
 
   .day {

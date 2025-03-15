@@ -53,3 +53,129 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* Các kiểu dáng phản hồi cho thiết bị nhỏ hơn (Máy tính bảng và các thiết bị tương tự) */
+@media (max-width: 1024px) {
+  .App {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .App-header {
+    padding: 20px;
+    font-size: calc(10px + 1.5vmin);
+  }
+
+  .forecast-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-around;
+  }
+
+  .forecast-container {
+    width: 45%;
+    padding: 15px;
+  }
+
+  .forecast-item {
+    font-size: 16px;
+  }
+
+  .day {
+    font-size: 14px;
+  }
+
+  .temp {
+    font-size: 14px;
+  }
+
+  .condition {
+    font-size: 12px;
+  }
+
+  .current-temp-container h1 {
+    font-size: 26px;
+  }
+
+  .current-temp-container h2 {
+    font-size: 40px;
+  }
+}
+
+/* Dành cho iPhone 14 Pro Max (kích thước 430px x 932px) */
+@media (max-width: 430px) {
+  .App-header {
+    padding: 10px;
+    font-size: calc(10px + 1vmin); /* Giảm kích thước chữ thêm chút */
+  }
+
+  .forecast-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .forecast-container {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  /* Điều chỉnh các phần tử dự báo theo giờ */
+  .hourly-forecast-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .forecast-title {
+    font-size: 16px; /* Điều chỉnh kích thước tiêu đề */
+  }
+
+  .forecast-item {
+    min-width: 70px;
+    padding: 5px;
+  }
+
+  .additional-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cột thay vì 3 */
+    grid-template-rows: repeat(3, 1fr); /* Điều chỉnh số hàng */
+    gap: 10px;
+  }
+
+  /* Các phần tử trong phần forecast */
+  .five-day-forecast {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Điều chỉnh kích thước chữ cho các yếu tố khác */
+  .hour-time, .hour-temp, .day, .temp {
+    font-size: 12px;
+  }
+
+  .weather-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .unit-toggle {
+    font-size: 12px;
+  }
+
+  .condition {
+    font-size: 10px;
+  }
+
+  .current-temp-container h1 {
+    font-size: 24px;
+  }
+
+  .current-temp-container h2 {
+    font-size: 35px;
+  }
+}

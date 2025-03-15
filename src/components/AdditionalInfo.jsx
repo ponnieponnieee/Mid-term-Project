@@ -1,13 +1,13 @@
 import React from "react";
 import './AdditionalInfo.css';
-const AdditionalInfo = ({humidity, pressure, speed, uvIndex}) =>{
+const AdditionalInfo = ({humidity, pressure, windSpeed, uvIndex, visibility, feelsLike}) =>{
     // dữ liệu mặc định khi chưa gọi API
     const weatherData = {
-        wind: speed,
-        visibility: "15 km",
+        wind: windSpeed + " km/h",
+        visibility: visibility / 1000 + " km",
         uvIndex: uvIndex,
         humidity: humidity,
-        feelsLike:"27°C",
+        feelsLike: feelsLike,
         pressure: pressure,
     };
 

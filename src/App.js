@@ -125,7 +125,9 @@ function App() {
           humidity={weatherData?.main.humidity}
           pressure={weatherData?.main.pressure}
           windSpeed={weatherData?.wind.speed}
-          uvIndex={uvIndex} 
+          uvIndex={weatherData?.uvIndex}
+          visibility={weatherData?.visibility}
+          feelsLike={weatherData?.feelsLike}
         />
       </div>
     </div>

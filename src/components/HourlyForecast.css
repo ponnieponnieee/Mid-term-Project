@@ -88,7 +88,7 @@
 /* Dành cho iPhone 14 Pro Max và các thiết bị nhỏ hơn */
 @media (max-width: 430px) {
   .hourly-forecast-container {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     overflow-x: auto; /* Thêm cuộn ngang nếu cần */
   }
@@ -107,10 +107,6 @@
     min-width: 70px; /* Điều chỉnh kích thước các phần tử */
     padding: 5px;
     font-size: 12px; /* Giảm kích thước chữ */
-  }
-
-  .hourly-forecast {
-    gap: 5px;
   }
 }
 

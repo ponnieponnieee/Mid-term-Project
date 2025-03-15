@@ -63,8 +63,8 @@ body {
 
   .forecast-info-container {
     display: flex;
-    flex-direction: column; /* Xếp dọc các phần tử */
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px;  /* Giảm khoảng cách */
     padding: 10px;
   }
 
@@ -74,12 +74,12 @@ body {
   }
 
   .forecast-item {
-    font-size: 14px;
+    font-size: 12px;  /* Giảm kích thước chữ */
     padding: 5px;
   }
 
   .current-temp-container h1 {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .current-temp-container h2 {
@@ -87,10 +87,11 @@ body {
   }
 
   .current-temp-container p {
-    font-size: 16px;
+    font-size: 14px;
     color: #ffffff;
     background-color: rgba(8, 99, 137, 0.4);
     border-radius: 10px;
+    padding: 10px;
   }
 }
 

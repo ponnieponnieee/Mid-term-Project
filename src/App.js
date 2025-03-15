@@ -139,7 +139,9 @@ function App() {
           convertTemperature={convertTemperature}
         />
       )}
+      
       <HourlyForecast forecast={hourlyForecast} unit={unit} />
+
       <div className="forecast-info-container">
         <FiveDayForecast forecast={fiveDayForecast} unit={unit} convertTemperature={convertTemperature} />
 
